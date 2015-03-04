@@ -1,91 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <title>Source: /Users/luiseduardobrito/Projects/devnup/angular-colors-util/src/angular-colors-util.js</title>
-    
-    
-    <script src="scripts/prettify/prettify.js"></script>
-    <script src="scripts/prettify/lang-css.js"></script>
-    <script src="scripts/jquery.min.js"></script>
-    <!--[if lt IE 9]>
-      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
-    <link type="text/css" rel="stylesheet" href="styles/bootstrap.min.css">
-    <link type="text/css" rel="stylesheet" href="styles/jaguar.css">
-    
-    
-    <script>
-    var config = {"monospaceLinks":true,"cleverLinks":true,"applicationName":"devnup/angular-colors-util - docs","default":{"outputSourceFiles":true},"linenums":true};
-    </script>
-    
-
-    
-</head>
-<body>
-<div id="wrap" class="clearfix">
-    
-<div class="navigation">
-    <h3 class="applicationName"><a href="index.html">devnup/angular-colors-util - docs</a></h3>
-
-    <div class="search">
-        <input id="search" type="text" class="form-control input-sm" placeholder="Search Documentations">
-    </div>
-
-    <p style="color: white; margin: 14px;">Module Reference</p>
-
-    <ul class="list">
-    
-        <li class="item" data-name="com.devnup.color.$color">
-            <span class="title">
-                <a href="com.devnup.color.$color.html">com.devnup.color.$color</a>
-                
-            </span>
-            <ul class="members itemMembers">
-            
-            </ul>
-            <ul class="methods itemMembers">
-                
-                <span class="subtitle">Methods</span>
-                
-                    <li data-name="com.devnup.color.$color#config"><a href="com.devnup.color.$color.html#config">config</a></li>
-                
-                    <li data-name="com.devnup.color.$color#generate"><a href="com.devnup.color.$color.html#generate">generate</a></li>
-                
-                    <li data-name="com.devnup.color.$color#hover"><a href="com.devnup.color.$color.html#hover">hover</a></li>
-                
-                    <li data-name="com.devnup.color.$color~devnupColors"><a href="com.devnup.color.$color.html#~devnupColors">devnupColors</a></li>
-                
-                    <li data-name="com.devnup.color.$color~distinctColors"><a href="com.devnup.color.$color.html#~distinctColors">distinctColors</a></li>
-                
-                    <li data-name="com.devnup.color.$color~hsvToRgb"><a href="com.devnup.color.$color.html#~hsvToRgb">hsvToRgb</a></li>
-                
-                    <li data-name="com.devnup.color.$color~rgbToHex"><a href="com.devnup.color.$color.html#~rgbToHex">rgbToHex</a></li>
-                
-                    <li data-name="com.devnup.color.$color~shadeColor"><a href="com.devnup.color.$color.html#~shadeColor">shadeColor</a></li>
-                
-                </ul>
-            <ul class="typedefs itemMembers">
-            
-            </ul>
-            <ul class="events itemMembers">
-            
-            </ul>
-        </li>
-    
-    </ul>
-
-</div>
-    <div class="main">
-        <h1 class="page-title" data-filename="-_Users_luiseduardobrito_Projects_devnup_angular-colors-util_src_angular-colors-util.js.html">Source: /Users/luiseduardobrito/Projects/devnup/angular-colors-util/src/angular-colors-util.js</h1>
-        
-
-
-    
-    <section>
-        <article>
-            <pre class="prettyprint source linenums"><code>/**
+/**
  * Angular Colors Util
  * v0.0.1
  *
@@ -231,9 +144,9 @@ angular.module('com.devnup.color', [])
                 var num = parseInt(color, 16),
                     amt = Math.round(2.55 * percent),
                     R = (num >> 16) + amt,
-                    G = (num >> 8 &amp; 0x00FF) + amt,
-                    B = (num &amp; 0x0000FF) + amt;
-                return (0x1000000 + (R &lt; 255 ? R &lt; 1 ? 0 : R : 255) * 0x10000 + (G &lt; 255 ? G &lt; 1 ? 0 : G : 255) * 0x100 + (B &lt; 255 ? B &lt; 1 ? 0 : B : 255)).toString(16).slice(1);
+                    G = (num >> 8 & 0x00FF) + amt,
+                    B = (num & 0x0000FF) + amt;
+                return (0x1000000 + (R < 255 ? R < 1 ? 0 : R : 255) * 0x10000 + (G < 255 ? G < 1 ? 0 : G : 255) * 0x100 + (B < 255 ? B < 1 ? 0 : B : 255)).toString(16).slice(1);
             };
 
             /**
@@ -247,7 +160,7 @@ angular.module('com.devnup.color', [])
             var distinctColors = function (total) {
                 var i = 360 / (total); // distribute the colors evenly on the hue range
                 var r = []; // hold the generated colors
-                for (var x = 0; x &lt; total; x++) {
+                for (var x = 0; x < total; x++) {
                     r.push(hsvToRgb(i * x, cache.saturation, cache.value)); // changes on saturation and value changes the final result
                 }
                 return r;
@@ -299,7 +212,7 @@ angular.module('com.devnup.color', [])
                 generate: function (number, branding) {
 
                     // Generate colors based on branding
-                    if (number &amp;&amp; number > 0 &amp;&amp; branding) {
+                    if (number && number > 0 && branding) {
                         return devnupColors(number);
                     }
 
@@ -325,24 +238,4 @@ angular.module('com.devnup.color', [])
 
             }
 
-        }]);</code></pre>
-        </article>
-    </section>
-
-
-
-
-
-
-        
-
-        <footer>
-            Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.3.0-beta1</a> on Wed Mar 04 2015 14:42:57 GMT-0300 (BRT)
-        </footer>
-    </div>
-</div>
-<script>prettyPrint();</script>
-<script src="scripts/linenumber.js"></script>
-<script src="scripts/main.js"></script>
-</body>
-</html>
+        }]);

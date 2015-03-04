@@ -10,16 +10,16 @@ Using Bower: ```bower install --save angular-colors-util```
 Include the library in your HTML file:
 ```html
 <!-- Angular Colors Util (Minified) -->
-<script type="text/javascript" src="bower_components/angular-colors-util/dist/angular-colors-util.min.js></script>
+<script type="text/javascript" src="bower_components/angular-colors-util/dist/angular-colors-util.min.js"></script>
 
 <!-- Angular Colors Util (Full) -->
-<script type="text/javascript" src="bower_components/angular-colors-util/dist/angular-colors-util.js></script>
+<script type="text/javascript" src="bower_components/angular-colors-util/dist/angular-colors-util.js"></script>
 ```
 
 Then include in your Angular module dependencies:
 ```javascript
 angular
-    .module('myModule', ['com.devnup.color']);
+    .module('myModule', ['com.devnup.color'])
     .controller('BodyCtrl', ['$scope', '$color', function($scope, $color) {
 
         $scope.count = 5;

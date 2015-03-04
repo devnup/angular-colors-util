@@ -37,10 +37,6 @@ angular
 
 ```
 
-### NodeJS Usage
-
-Coming Soon...
-
 
 ### Authors
 - [André Seiji](https://github.com/seijitamanaha) - [seiji@devnup.com](mailto:seiji@devnup.com)

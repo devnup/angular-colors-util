@@ -8,7 +8,7 @@ Using Bower: ```bower install --save angular-colors-util```
 ### Browser Usage
 
 Include the library in your HTML file:
-```html
+```markup
 <!-- Angular Colors Util (Minified) -->
 <script type="text/javascript" src="bower_components/angular-colors-util/dist/angular-colors-util.min.js"></script>
 

@@ -25,7 +25,7 @@ module.exports = function (grunt) {
                     paths: ['src/assets/less']
                 },
                 files: {
-                    'dist/css/style.css': 'src/assets/less/**.less'
+                    'src/assets/css/style.css': 'src/assets/less/**.less'
                 }
             }
         },
@@ -33,12 +33,12 @@ module.exports = function (grunt) {
         cssmin: {
             target: {
                 files: {
-                    'dist/css/style.min.css': ['dist/css/style.css']
+                    'src/assets/css/style.min.css': ['dist/css/style.css']
                 }
             }
         },
 
-        clean: ["dist/"],
+        clean: ["dist/", "src/assets/css/"],
 
         watch: {
             files: ['src/**'],

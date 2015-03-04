@@ -43,8 +43,8 @@ Coming Soon...
 
 
 ### Authors
-- [André Seiji](https://github.com/seijitamanaha) <[seiji@devnup.com](mailto:seiji@devnup.com)>
-- [Luís Eduardo Brito](https://github.com/luiseduardobrito) <[luis@devnup.com](mailto:luis@devnup.com)>
+- [André Seiji](https://github.com/seijitamanaha) - [seiji@devnup.com](mailto:seiji@devnup.com)
+- [Luís Eduardo Brito](https://github.com/luiseduardobrito) - [luis@devnup.com](mailto:luis@devnup.com)
 
 ### License
 

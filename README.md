@@ -24,10 +24,10 @@ angular
 
         $scope.count = 5;
 
-        $scope.colors = $colors.generate(count).map(function(c) {
+        $scope.colors = $color.generate(count).map(function(c) {
             return {
                 color: c,
-                hover: $colors.hover(c)
+                hover: $color.hover(c)
             }
         });
 

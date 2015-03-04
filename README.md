@@ -16,10 +16,10 @@ Include the library in your HTML file:
 <script type="text/javascript" src="bower_components/angular-colors-util/dist/angular-colors-util.js"></script>
 ```
 
-Then include in your Angular module dependencies:
+Include the module in your Angular app:
 ```javascript
 angular
-    .module('myModule', ['com.devnup.color'])
+    .module('myApp', ['com.devnup.color'])
     .controller('BodyCtrl', ['$scope', '$color', function($scope, $color) {
 
         $scope.count = 5;
@@ -43,8 +43,8 @@ Coming Soon...
 
 
 ### Authors
-- [André Seiji](https://github.com/seijitamanaha) [<seiji@devnup.com>](mailto:seiji@devnup.com)
-- [Luís Eduardo Brito](https://github.com/luiseduardobrito) [<luis@devnup.com>](mailto:luis@devnup.com)
+- [André Seiji](https://github.com/seijitamanaha) <[seiji@devnup.com](mailto:seiji@devnup.com)>
+- [Luís Eduardo Brito](https://github.com/luiseduardobrito) <[luis@devnup.com](mailto:luis@devnup.com)>
 
 ### License
 

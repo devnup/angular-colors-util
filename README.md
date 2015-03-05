@@ -39,7 +39,7 @@ angular
 
 ### Samples
 
-- [Sample Color Generator (HTML + JS)](http://angular-colors-util.snippets.devnup.com/sample/editor/index.html)
+- [Sample Color Generator (HTML + JS)](http://angular-colors-util.snippets.devnup.com)
 
 
 ### Authors

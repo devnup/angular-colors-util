@@ -7,14 +7,14 @@ module.exports = function (grunt) {
         copy: {
             main: {
                 src: 'src/angular-colors-util.js',
-                dest: 'dist/js/angular-colors-util.js'
+                dest: 'src/dist/js/angular-colors-util.js'
             }
         },
 
         uglify: {
             minify: {
                 files: {
-                    'dist/js/angular-colors-util.min.js': ['dist/js/angular-colors-util.js']
+                    'src/dist/js/angular-colors-util.min.js': ['src/dist/js/angular-colors-util.js']
                 }
             }
         },
@@ -33,12 +33,12 @@ module.exports = function (grunt) {
         cssmin: {
             target: {
                 files: {
-                    'src/assets/css/style.min.css': ['dist/css/style.css']
+                    'src/assets/css/style.min.css': ['src/dist/css/style.css']
                 }
             }
         },
 
-        clean: ["dist/", "src/assets/css/"],
+        clean: ["src/dist/", "src/assets/css/"],
 
         watch: {
             files: ['src/**'],

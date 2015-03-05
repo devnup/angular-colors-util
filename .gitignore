@@ -67,6 +67,9 @@ coverage
 # Grunt intermediate storage (http://gruntjs.com/creating-plugins#storing-task-files)
 .grunt
 
+# Bower
+src/bower_components/
+
 # node-waf configuration
 .lock-wscript
 

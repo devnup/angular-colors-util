@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Index</title>
+    <title>Source: angular-colors-util.js</title>
     
     
     <script src="scripts/prettify/prettify.js"></script>
@@ -147,71 +147,255 @@
 
 </div>
     <div class="main">
-        <h1 class="page-title" data-filename="index.html">Index</h1>
+        <h1 class="page-title" data-filename="angular-colors-util.js.html">Source: angular-colors-util.js</h1>
         
 
 
     
-
-
-    <h3> </h3>
-
-
-
-
-
-
-
-
-    
-
-
-
-
     <section>
-        <article class="readme"><h1>angular-colors-util</h1><h3>Installation</h3><p>Using Bower: <code>bower install --save angular-colors-util</code></p>
-<h3>Browser Usage</h3><p>Include the library in your HTML file:</p>
-<pre class="prettyprint source lang-markup"><code>&lt;!-- Angular Colors Util (Minified) -->
-&lt;script type=&quot;text/javascript&quot; src=&quot;bower_components/angular-colors-util/dist/angular-colors-util.min.js&quot;>&lt;/script>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * Angular Colors Util
+ * v0.0.1
+ *
+ * @alias com.devnup.color
+ *
+ * @author luis@devnup.com
+ * @since 03/02/15.
+ */
+angular.module('com.devnup.color', [])
 
-&lt;!-- Angular Colors Util (Full) -->
-&lt;script type=&quot;text/javascript&quot; src=&quot;bower_components/angular-colors-util/dist/angular-colors-util.js&quot;>&lt;/script></code></pre><p>Include the module in your Angular app:</p>
-<pre class="prettyprint source lang-javascript"><code>angular
-    .module('myApp', ['com.devnup.color'])
-    .controller('BodyCtrl', ['$scope', '$color', function($scope, $color) {
+    .factory('$color', [
 
-        $scope.count = 5;
+        /**
+         * Angular Colors Service
+         * v0.0.1
+         *
+         * @class
+         * @alias com.devnup.color.$color
+         */
+            function () {
 
-        $scope.colors = $color.generate(count).map(function(c) {
+            // Default Values
+            var cache = {
+                value: 80,
+                saturation: 70,
+                number: 10
+            };
+
+            /**
+             * HSV to RGB color conversion
+             *
+             * H runs from 0 to 360 degrees
+             * S and V run from 0 to 100
+             *
+             * @alias com.devnup.color.$color~hsvToRgb
+             *
+             * @param h
+             * @param s
+             * @param v
+             */
+            var hsvToRgb = function (h, s, v) {
+
+                var r, g, b, i, f, p, q, t;
+
+                // Make sure our arguments stay in-range
+                h = Math.max(0, Math.min(360, h));
+                s = Math.max(0, Math.min(100, s));
+                v = Math.max(0, Math.min(100, v));
+
+                // We accept saturation and value arguments from 0 to 100 because that's
+                // how Photoshop represents those values. Internally, however, the
+                // saturation and value are calculated from a range of 0 to 1. We make
+                // That conversion here.
+                s /= 100;
+                v /= 100;
+
+                if (s == 0) {
+
+                    // Achromatic (grey)
+                    r = g = b = v;
+                    return [Math.round(r * 255), Math.round(g * 255), Math.round(b * 255)];
+                }
+
+                h /= 60; // sector 0 to 5
+                i = Math.floor(h);
+                f = h - i; // factorial part of h
+                p = v * (1 - s);
+                q = v * (1 - s * f);
+                t = v * (1 - s * (1 - f));
+
+                switch (i) {
+
+                    case 0:
+
+                        r = v;
+                        g = t;
+                        b = p;
+                        break;
+
+                    case 1:
+
+                        r = q;
+                        g = v;
+                        b = p;
+                        break;
+
+                    case 2:
+
+                        r = p;
+                        g = v;
+                        b = t;
+                        break;
+
+                    case 3:
+
+                        r = p;
+                        g = q;
+                        b = v;
+                        break;
+
+                    case 4:
+
+                        r = t;
+                        g = p;
+                        b = v;
+                        break;
+
+                    default: // case 5:
+                        r = v;
+                        g = p;
+                        b = q;
+                }
+
+                return [Math.round(r * 255), Math.round(g * 255), Math.round(b * 255)];
+
+            };
+
+            /**
+             * RGB to HEX conversion
+             *
+             * @alias com.devnup.color.$color~rgbToHex
+             *
+             * @param red
+             * @param green
+             * @param blue
+             * @returns {string}
+             */
+            var rgbToHex = function (red, green, blue) {
+                var decColor = red + 256 * green + 256 * 256 * blue;
+                return decColor.toString(16);
+            };
+
+            /**
+             * Shade a hex color
+             *
+             * @alias com.devnup.color.$color~shadeColor
+             *
+             * @param color
+             * @param percent
+             * @returns {string}
+             */
+            var shadeColor = function (color, percent) {
+                var num = parseInt(color, 16),
+                    amt = Math.round(2.55 * percent),
+                    R = (num >> 16) + amt,
+                    G = (num >> 8 &amp; 0x00FF) + amt,
+                    B = (num &amp; 0x0000FF) + amt;
+                return (0x1000000 + (R &lt; 255 ? R &lt; 1 ? 0 : R : 255) * 0x10000 + (G &lt; 255 ? G &lt; 1 ? 0 : G : 255) * 0x100 + (B &lt; 255 ? B &lt; 1 ? 0 : B : 255)).toString(16).slice(1);
+            };
+
+            /**
+             * Generate distinct colors based on HSV
+             *
+             * @alias com.devnup.color.$color~distinctColors
+             *
+             * @param total
+             * @returns {Array}
+             */
+            var distinctColors = function (total) {
+                var i = 360 / (total); // distribute the colors evenly on the hue range
+                var r = []; // hold the generated colors
+                for (var x = 0; x &lt; total; x++) {
+                    r.push(hsvToRgb(i * x, cache.saturation, cache.value)); // changes on saturation and value changes the final result
+                }
+                return r;
+            };
+
+            /**
+             * Generate distinct colors based on Devnup branding
+             *
+             * @alias com.devnup.color.$color~devnupColors
+             *
+             * @param n
+             * @returns {Array}
+             */
+            var devnupColors = function (n) {
+                var colorsHex = [];
+                colorsDec = distinctColors(n);
+                for (k in colorsDec) {
+                    colorsHex[k] = "#" + rgbToHex(colorsDec[k][0], colorsDec[k][1], colorsDec[k][2]);
+                }
+                return colorsHex;
+            };
+
             return {
-                color: c,
-                hover: $color.hover(c)
+
+                /**
+                 * Set generator configuration values.
+                 *
+                 * @alias com.devnup.color.$color#config
+                 *
+                 * @param {Object} cfg The input configuration
+                 * @param {Number} [cfg.value] The color value
+                 * @param {Number} [cfg.saturation] The color saturation
+                 * @param {Number} [cfg.number] The color number
+                 */
+                config: function (cfg) {
+                    cache.value = cfg.value || cache.value;
+                    cache.saturation = cfg.saturation || cache.saturation;
+                    cache.number = cfg.number || cache.number;
+                },
+
+                /**
+                 * Generate a new random color set.
+                 *
+                 * @alias com.devnup.color.$color#generate
+                 *
+                 * @param {Number} number The color count
+                 * @param {Boolean} [branding] If true generate using branding colors as reference
+                 */
+                generate: function (number, branding) {
+
+                    // Generate colors based on branding
+                    if (number &amp;&amp; number > 0 &amp;&amp; branding) {
+                        return devnupColors(number);
+                    }
+
+                    // Generate distinct colors
+                    else {
+                        return distinctColors(number);
+                    }
+
+                },
+
+                /**
+                 * Hover a hex color.
+                 *
+                 * @alias com.devnup.color.$color#hover
+                 *
+                 * @param {Number} color The color to hover.
+                 * @param {Number} [percent] The value to hover, default: 20%
+                 */
+                hover: function (color, percent) {
+                    percent = percent || 20;
+                    return shadeColor(color, percent);
+                }
+
             }
-        });
 
-        console.info($scope.colors);
-
-    }]);</code></pre><h3>Authors</h3><ul>
-<li><a href="https://github.com/seijitamanaha">André Seiji</a> - <a href="mailto:seiji@devnup.com">seiji@devnup.com</a></li>
-<li><a href="https://github.com/luiseduardobrito">Luís Eduardo Brito</a> - <a href="mailto:luis@devnup.com">luis@devnup.com</a></li>
-</ul>
-<h3>License</h3><p>The MIT License (MIT)</p>
-<p>Copyright (c) 2015 - Devnup Solutions</p>
-<p>Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the &quot;Software&quot;), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:</p>
-<p>The above copyright notice and this permission notice shall be included in
-all copies or substantial portions of the Software.</p>
-<p>THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-THE SOFTWARE.</p></article>
+        }]);</code></pre>
+        </article>
     </section>
 
 

@@ -175,6 +175,8 @@ app.controller('EditorCtrl', [
             }
             $('#hoverColorsBox').html(html);
             return false;
-        }
+        };
+
+        $scope.generateColors();
 
     }]);

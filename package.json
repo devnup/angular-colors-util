@@ -5,7 +5,7 @@
   "main": "Gruntfile.js",
   "scripts": {
     "postinstall": "./scripts/postinstall.sh",
-    "start": "[ -z \"$PORT\" ] && echo \"PORT not set\" && export PORT=3000; cd src/ && ../node_modules/http-server/bin/http-server -p \"$PORT\";"
+    "start": "[ -z \"$PORT\" ] && echo \"PORT not set\" && export PORT=3000; cd lib/ && ../node_modules/http-server/bin/http-server -p \"$PORT\";"
   },
   "repository": {
     "type": "git",

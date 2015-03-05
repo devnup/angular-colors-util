@@ -6,15 +6,15 @@ module.exports = function (grunt) {
 
         copy: {
             main: {
-                src: 'src/angular-colors-util.js',
-                dest: 'src/dist/js/angular-colors-util.js'
+                src: 'lib/src/angular-colors-util.js',
+                dest: 'lib/dist/angular-colors-util.js'
             }
         },
 
         uglify: {
             minify: {
                 files: {
-                    'src/dist/js/angular-colors-util.min.js': ['src/dist/js/angular-colors-util.js']
+                    'lib/dist/angular-colors-util.min.js': ['lib/dist/angular-colors-util.js']
                 }
             }
         },
@@ -22,10 +22,10 @@ module.exports = function (grunt) {
         less: {
             development: {
                 options: {
-                    paths: ['src/assets/less']
+                    paths: ['lib/assets/less']
                 },
                 files: {
-                    'src/assets/css/style.css': 'src/assets/less/**.less'
+                    'lib/assets/css/style.css': 'lib/assets/less/**.less'
                 }
             }
         },
@@ -33,15 +33,15 @@ module.exports = function (grunt) {
         cssmin: {
             target: {
                 files: {
-                    'src/assets/css/style.min.css': ['src/dist/css/style.css']
+                    'lib/assets/css/style.min.css': ['lib/dist/css/style.css']
                 }
             }
         },
 
-        clean: ["src/dist/", "src/assets/css/"],
+        clean: ["lib/dist/", "lib/assets/css/"],
 
         watch: {
-            files: ['src/**'],
+            files: ['lib/**'],
             tasks: ['dev']
         }
     });

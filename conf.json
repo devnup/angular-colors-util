@@ -3,8 +3,8 @@
     "allowUnknownTags": true
   },
   "source": {
-    "include": ["./src", "./README.md"],
-    "exclude": ["./bower_components", "./src/docs"],
+    "include": ["./lib", "./README.md"],
+    "exclude": ["./lib/bower_components", "./lib/docs"],
     "includePattern": ".+\\.js(doc)?$",
     "excludePattern": "(^|\\/|\\\\)_"
   },
@@ -23,7 +23,7 @@
     "hardwrap": true
   },
   "opts": {
-    "destination": "./src/docs",
+    "destination": "./lib/docs",
     "recurse": true,
     "template": "./jsdoc/template",
     "tutorials": "./jsdoc/tutorials"

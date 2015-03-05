@@ -10,10 +10,10 @@ Using Bower: ```bower install --save angular-colors-util```
 Include the library in your HTML file:
 ```markup
 <!-- Angular Colors Util (Minified) -->
-<script type="text/javascript" src="bower_components/angular-colors-util/dist/angular-colors-util.min.js"></script>
+<script type="text/javascript" src="bower_components/angular-colors-util/lib/dist/angular-colors-util.min.js"></script>
 
 <!-- Angular Colors Util (Full) -->
-<script type="text/javascript" src="bower_components/angular-colors-util/dist/angular-colors-util.js"></script>
+<script type="text/javascript" src="bower_components/angular-colors-util/lib/dist/angular-colors-util.js"></script>
 ```
 
 Include the module in your Angular app:

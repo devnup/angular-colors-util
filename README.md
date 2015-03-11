@@ -41,6 +41,9 @@ angular
 
 - [Sample Color Generator (HTML + JS)](http://angular-colors-util.snippets.devnup.com)
 
+### Documentation
+
+- [API Reference (JSDoc)](http://angular-colors-util.snippets.devnup.com/docs)
 
 ### Authors
 - [André Seiji](https://github.com/seijitamanaha) - [seiji@devnup.com](mailto:seiji@devnup.com)

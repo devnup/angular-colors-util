@@ -2,12 +2,13 @@
   "name": "angular-colors-util",
   "version": "0.0.1",
   "authors": [
-    "Luis Brito <luis@devnup.com>",
-    "André Seiji <seiji@devnup.com>"
+    "Luis Brito <luis@devnup.com> (https://github.com/luiseduardobrito)",
+    "André Seiji <seiji@devnup.com> (https://github.com/seijitamanaha)"
   ],
   "description": "Utility service for generating and handling colors inside AngularJS",
   "license": "MIT",
-  "homepage": "snippets.devnup.com",
+  "homepage": "http://snippets.devnup.com",
+  "repository": "http://git.devnup.com/devnup/angular-colors-util.git",
   "ignore": [
     "**/.*",
     "node_modules",

@@ -107,7 +107,7 @@
     
         
         <div class="tag-source">
-            <a href="src_angular-colors-util.js.html">src/angular-colors-util.js</a>, <a href="src_angular-colors-util.js.html#line21">line 21</a>
+            <a href="src_js_angular-colors-util.js.html">src/js/angular-colors-util.js</a>, <a href="src_js_angular-colors-util.js.html#line22">line 22</a>
         </div>
         
     </div>
@@ -192,12 +192,12 @@ v0.0.1</p>
     <div class="nameContainer">
         <h4 class="name" id="config">
             
-            config<span class="signature">(cfg)</span>
+            config<span class="signature">(input)</span>
         </h4>
     
         
         <div class="tag-source">
-            <a href="src_angular-colors-util.js.html">src/angular-colors-util.js</a>, <a href="src_angular-colors-util.js.html#line198">line 198</a>
+            <a href="src_js_angular-colors-util.js.html">src/js/angular-colors-util.js</a>, <a href="src_js_angular-colors-util.js.html#line198">line 198</a>
         </div>
         
     </div>
@@ -239,7 +239,7 @@ v0.0.1</p>
 	
         <tr>
             
-                <td class="name"><code>cfg</code></td>
+                <td class="name"><code>input</code></td>
             
             
             <td class="type">
@@ -425,7 +425,7 @@ v0.0.1</p>
     
         
         <div class="tag-source">
-            <a href="src_angular-colors-util.js.html">src/angular-colors-util.js</a>, <a href="src_angular-colors-util.js.html#line212">line 212</a>
+            <a href="src_js_angular-colors-util.js.html">src/js/angular-colors-util.js</a>, <a href="src_js_angular-colors-util.js.html#line212">line 212</a>
         </div>
         
     </div>
@@ -576,7 +576,7 @@ v0.0.1</p>
     
         
         <div class="tag-source">
-            <a href="src_angular-colors-util.js.html">src/angular-colors-util.js</a>, <a href="src_angular-colors-util.js.html#line234">line 234</a>
+            <a href="src_js_angular-colors-util.js.html">src/js/angular-colors-util.js</a>, <a href="src_js_angular-colors-util.js.html#line234">line 234</a>
         </div>
         
     </div>
@@ -727,7 +727,7 @@ v0.0.1</p>
     
         
         <div class="tag-source">
-            <a href="src_angular-colors-util.js.html">src/angular-colors-util.js</a>, <a href="src_angular-colors-util.js.html#line160">line 160</a>
+            <a href="src_js_angular-colors-util.js.html">src/js/angular-colors-util.js</a>, <a href="src_js_angular-colors-util.js.html#line161">line 161</a>
         </div>
         
     </div>
@@ -847,12 +847,12 @@ colors array
     <div class="nameContainer">
         <h4 class="name" id="~distinctHexColors">
             
-            <span class="type-signature ">inner</span>distinctHexColors<span class="signature">(n)</span><span class="glyphicon glyphicon-circle-arrow-right"></span><span class="type-signature returnType">{Array}</span>
+            <span class="type-signature ">inner</span>distinctHexColors<span class="signature">(count)</span><span class="glyphicon glyphicon-circle-arrow-right"></span><span class="type-signature returnType">{Array}</span>
         </h4>
     
         
         <div class="tag-source">
-            <a href="src_angular-colors-util.js.html">src/angular-colors-util.js</a>, <a href="src_angular-colors-util.js.html#line177">line 177</a>
+            <a href="src_js_angular-colors-util.js.html">src/js/angular-colors-util.js</a>, <a href="src_js_angular-colors-util.js.html#line178">line 178</a>
         </div>
         
     </div>
@@ -863,7 +863,7 @@ colors array
     
     
     <div class="description">
-        <p>Generate distinct colors based on Devnup branding</p>
+        <p>Generate distinct colors</p>
     </div>
     
 
@@ -894,10 +894,15 @@ colors array
 	
         <tr>
             
-                <td class="name"><code>n</code></td>
+                <td class="name"><code>count</code></td>
             
             
             <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
             
             </td>
             
@@ -905,7 +910,7 @@ colors array
             
             <td class="description last">
                 
-                </td>
+                <p>The color count</p></td>
         </tr>
 	
 	
@@ -952,6 +957,10 @@ colors array
     
 
 
+<h5>Returns:</h5>
+colors array
+<br />
+
     
     
     
@@ -963,12 +972,12 @@ colors array
     <div class="nameContainer">
         <h4 class="name" id="~hsvToRgb">
             
-            <span class="type-signature ">inner</span>hsvToRgb<span class="signature">(h, s, v)</span>
+            <span class="type-signature ">inner</span>hsvToRgb<span class="signature">(hue, saturation, value)</span>
         </h4>
     
         
         <div class="tag-source">
-            <a href="src_angular-colors-util.js.html">src/angular-colors-util.js</a>, <a href="src_angular-colors-util.js.html#line42">line 42</a>
+            <a href="src_js_angular-colors-util.js.html">src/js/angular-colors-util.js</a>, <a href="src_js_angular-colors-util.js.html#line43">line 43</a>
         </div>
         
     </div>
@@ -1012,10 +1021,15 @@ S and V run from 0 to 100</p>
 	
         <tr>
             
-                <td class="name"><code>h</code></td>
+                <td class="name"><code>hue</code></td>
             
             
             <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
             
             </td>
             
@@ -1023,17 +1037,22 @@ S and V run from 0 to 100</p>
             
             <td class="description last">
                 
-                </td>
+                <p>The hue value</p></td>
         </tr>
 	
 	
 	
         <tr>
             
-                <td class="name"><code>s</code></td>
+                <td class="name"><code>saturation</code></td>
             
             
             <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
             
             </td>
             
@@ -1041,17 +1060,22 @@ S and V run from 0 to 100</p>
             
             <td class="description last">
                 
-                </td>
+                <p>The saturation value</p></td>
         </tr>
 	
 	
 	
         <tr>
             
-                <td class="name"><code>v</code></td>
+                <td class="name"><code>value</code></td>
             
             
             <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
             
             </td>
             
@@ -1059,7 +1083,7 @@ S and V run from 0 to 100</p>
             
             <td class="description last">
                 
-                </td>
+                <p>The color valur</p></td>
         </tr>
 	
 	
@@ -1117,7 +1141,7 @@ S and V run from 0 to 100</p>
     
         
         <div class="tag-source">
-            <a href="src_angular-colors-util.js.html">src/angular-colors-util.js</a>, <a href="src_angular-colors-util.js.html#line129">line 129</a>
+            <a href="src_js_angular-colors-util.js.html">src/js/angular-colors-util.js</a>, <a href="src_js_angular-colors-util.js.html#line130">line 130</a>
         </div>
         
     </div>
@@ -1269,7 +1293,7 @@ S and V run from 0 to 100</p>
     
         
         <div class="tag-source">
-            <a href="src_angular-colors-util.js.html">src/angular-colors-util.js</a>, <a href="src_angular-colors-util.js.html#line143">line 143</a>
+            <a href="src_js_angular-colors-util.js.html">src/js/angular-colors-util.js</a>, <a href="src_js_angular-colors-util.js.html#line144">line 144</a>
         </div>
         
     </div>
@@ -1316,13 +1340,18 @@ S and V run from 0 to 100</p>
             
             <td class="type">
             
+                
+<span class="param-type">Number</span>
+
+
+            
             </td>
             
             
             
             <td class="description last">
                 
-                </td>
+                <p>The color hex as a number</p></td>
         </tr>
 	
 	
@@ -1334,13 +1363,18 @@ S and V run from 0 to 100</p>
             
             <td class="type">
             
+                
+<span class="param-type">Number</span>
+
+
+            
             </td>
             
             
             
             <td class="description last">
                 
-                </td>
+                <p>The percentage of the shading</p></td>
         </tr>
 	
 	
@@ -1387,6 +1421,10 @@ S and V run from 0 to 100</p>
     
 
 
+<h5>Returns:</h5>
+shade hex color generated
+<br />
+
     
     
     
@@ -1409,7 +1447,7 @@ S and V run from 0 to 100</p>
         
 
         <footer>
-            Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.3.0-beta1</a> on Tue Mar 24 2015 09:28:16 GMT-0300 (BRT)
+            Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.3.0-beta1</a> on Thu Apr 09 2015 18:35:05 GMT-0300 (BRT)
         </footer>
     </div>
 </div>
